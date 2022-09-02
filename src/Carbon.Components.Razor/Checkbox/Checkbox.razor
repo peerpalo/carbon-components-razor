@@ -1,0 +1,12 @@
+﻿@namespace Carbon.Components.Razor
+@inherits ComponentBase
+
+<div class="@GetCssClass("form", "-item") @GetCssClass("checkbox", "-wrapper")">
+    <input type="checkbox" @attributes="AdditionalAttributes" class="@GetCssClass("checkbox")" id="@Id" disabled=@Disabled />
+    <label for="@Id" class="@GetCssClass("checkbox", "-label")">
+        @if (!HideLabel && !string.IsNullOrEmpty(LabelText))
+        {
+            <span class="@GetCssClass("checkbox", "-label-text")" dir="auto">@LabelText</span>
+        }
+    </label>
+</div>

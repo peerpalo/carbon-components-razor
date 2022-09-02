@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+	
+  <ItemGroup>
+    <Using Include="Microsoft.AspNetCore.Components" />
+  </ItemGroup>	
+
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.8" />
+  </ItemGroup>
+	
+  <Target Name="npm" BeforeTargets="BeforeBuild">
+    <Exec Command="npm install" ContinueOnError="false" />
+	<Exec Command="npm run build-dev" ContinueOnError="false" />
+  </Target>
+	
+</Project>

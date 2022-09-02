@@ -1,0 +1,6 @@
+﻿@namespace Carbon.Components.Razor
+@inherits ComponentBase
+
+<label id="@Id" @attributes="AdditionalAttributes" class="@GetCssClass("label") @GetCssClass("label", $"-no-margin")">
+    @ChildContent
+</label>

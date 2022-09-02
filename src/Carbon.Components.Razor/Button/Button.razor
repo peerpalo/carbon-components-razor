@@ -1,0 +1,6 @@
+﻿@namespace Carbon.Components.Razor
+@inherits ComponentBase
+
+<button id="@Id" @attributes="AdditionalAttributes" class="@GetCssClass("btn") @GetCssClass("btn", $"-disabled", Disabled) @GetCssClass("btn", $"--{Kind.ToString().ToLower()}")">
+    @ChildContent
+</button>
